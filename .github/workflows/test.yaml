@@ -27,6 +27,7 @@ jobs:
           echo "npm install"
           echo "npm test --if-present"
   cd:
+    needs: ci
     runs-on: ubuntu-latest
 
     steps:
