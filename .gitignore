@@ -1,1 +1,72 @@
-node_modules
+# ----------------------------------------------------------------------
+# 1. Dependências e Diretórios de Módulos
+# Exclui a pasta onde os módulos são instalados (são reconstruídos pelo npm install)
+# ----------------------------------------------------------------------
+/node_modules
+/npm-debug.log
+.npm/
+.pnpm-debug.log # Se usar pnpm
+.yarn/ # Se usar yarn
+.pnpm-store # Se usar pnpm com store local
+
+# ----------------------------------------------------------------------
+# 2. Ficheiros de Build e Bundlers
+# Exclui pastas de saída de build (ex: Babel, TypeScript, Webpack)
+# ----------------------------------------------------------------------
+/dist
+/build
+/out
+/coverage
+/tmp
+
+# ----------------------------------------------------------------------
+# 3. Ficheiros de Desenvolvimento e IDEs
+# Exclui ficheiros de cache de IDEs (VS Code, Sublime, IntelliJ) e ficheiros temporários
+# ----------------------------------------------------------------------
+# VS Code
+.vscode/
+
+# Editor Config (Exemplo)
+.idea/
+
+# Ficheiros Swap ou Temporários
+*.swp
+*~
+*.log
+.DS_Store
+
+# ----------------------------------------------------------------------
+# 4. Ficheiros de Segurança e Variáveis de Ambiente
+# EXTREMAMENTE IMPORTANTE: NÃO FAÇA COMMIT DE SEGREDOS!
+# ----------------------------------------------------------------------
+.env
+.env.*
+.credentials
+*.key
+*.pem
+
+# ----------------------------------------------------------------------
+# 5. Configuração e Ficheiros de Sistemas Operacionais
+# Exclui ficheiros gerados por SO (Windows, macOS)
+# ----------------------------------------------------------------------
+# Windows
+Thumbs.db
+
+# ----------------------------------------------------------------------
+# 6. Exclusões Relacionadas ao Docker e Containers
+# O build do Docker deve usar a versão do NPM/PNPM Lockfile
+# ----------------------------------------------------------------------
+.dockerignore 
+# Geralmente ignorado, pois define o que é ignorado no build.
+
+# Se você estiver fazendo build dentro do container, pode ignorar o resultado:
+# /.docker/build-cache
+
+# ----------------------------------------------------------------------
+# 7. Ficheiros Lock (Decisão importante)
+# O ficheiro de lock DEVE ser incluído (commitado) para builds reproduzíveis!
+# Se você estiver usando pnpm: NÃO IGNORE pnpm-lock.yaml
+# ----------------------------------------------------------------------
+# package-lock.json # NÃO IGNORE, MANTENHA-O NO REPOSITÓRIO!
+# yarn.lock         # NÃO IGNORE, MANTENHA-O NO REPOSITÓRIO!
+# pnpm-lock.yaml    # NÃO IGNORE, MANTENHA-O NO REPOSITÓRIO!

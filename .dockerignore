@@ -1,1 +1,12 @@
+# Dependências instaladas localmente
 node_modules
+# Cache e logs
+npm-debug.log
+.npm/
+# Ficheiros do Git
+.git
+# Ficheiros de IDEs
+.vscode
+*.log
+# Variáveis de ambiente
+.env
